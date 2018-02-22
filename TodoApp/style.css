@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  border: 1px solid #333;
+  background: #eee;;
+}
+
+#done {
+  text-decoration: line-through;
+  color: #888;
+}
