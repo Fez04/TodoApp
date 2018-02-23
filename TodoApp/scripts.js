@@ -11,7 +11,7 @@ function removeItem() {
 
   parent.removeChild(item);
 
-  //lists.todo.appendChild(task)
+
 }
 
 
@@ -20,24 +20,28 @@ var editItem= function() {
 
     var listItem = this.parentNode;
     var editInput = listItem.querySelector("input[type=text]");
-var label = listItem.querySelector("label");
+    var label = listItem.querySelector("label");
 
 
     var containsClass = listItem.classList.contains('editMode');
 
 
-    //if the class pf parent is .editmode
+
 if (containsClass){
-  //label text become the input's value
+
   label.textContent = editInput.value;
 
+  label.style.display = 'inline';
+  editInput.style.display = 'none';
 } else {
-    //switch to .editmode
-    //input value becomes the label's text
+
   editInput.value = label.textContent;
+
+  editInput.style.display = 'inline-block';
+  label.style.display = 'none';
 }
 
-listItem.classList.toggle('editMode'); //toggle .editmode on the parent
+listItem.classList.toggle('editMode');
 
 }
 
@@ -56,8 +60,10 @@ var makeTaskHtml = function(taskString, onCheck) {
     checkbox.type = 'checkbox';
     editInput.type = "text";
 
+    editInput.style.display = 'none';
+
     checkbox.addEventListener('click', onCheck);
-    //label.textContent = str;
+
     label.textContent = taskString;
 
     deleteButton.innerText = ('Delete');
@@ -70,12 +76,14 @@ var makeTaskHtml = function(taskString, onCheck) {
     listItem.appendChild(editButton);
     listItem.appendChild(label);
 
+    listItem.appendChild(editInput);
+
     return listItem;
   };
 
   var addTask = function(task) {
       lists.todo.appendChild(task);
-      //lists.todo.insertBefore(task, list.childNodes[0]);
+
   };
 
   var onCheck = function(event){
