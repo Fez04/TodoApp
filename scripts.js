@@ -83,7 +83,7 @@ var makeTaskHtml = function(taskString, onCheck) {
 
   var addTask = function(task) {
       lists.todo.appendChild(task);
-      
+
       this.checked = false;
 
   };
@@ -93,11 +93,17 @@ var makeTaskHtml = function(taskString, onCheck) {
       var list = task.parentElement.id;
 
       lists[list === 'done' ? 'todo' : 'done'].appendChild(task);
-      this.checked = true;
+      this.checked === 'todo' ? 'true' : 'false';
+      //this.checked = true;
       input.value = '';
       input.focus()
 
   };
+
+
+
+
+
 
   var onInput = function() {
     var taskString = input.value;
