@@ -83,6 +83,8 @@ var makeTaskHtml = function(taskString, onCheck) {
 
   var addTask = function(task) {
       lists.todo.appendChild(task);
+      
+      this.checked = false;
 
   };
 
