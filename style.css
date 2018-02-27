@@ -1,23 +1,35 @@
 body {
-  background: orange;
+background-image: url("img/clipboard.png");
+background-repeat: no-repeat;
+    background-size: contain;
   padding: 80px 0 0 0;
 
+}
 
 
+h1 {
+  padding-top: 100px;
+  margin: 30px;
+}
 
+h2 {
+  margin: 30px;
 
-
-
+}
 ul {
   list-style: none;
   padding: 10px;
-  margin: 10px;
+  margin: 30px;
   width: 30%;
   border: 1px solid #333;
-  
+
 }
 
 #done {
   text-decoration: line-through;
   color: #888;
+}
+
+#input {
+  margin-left: 30px;
 }
